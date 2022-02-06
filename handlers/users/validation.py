@@ -32,4 +32,5 @@ async def valid_purchase(message:Message):
         purchases+=f"\nXaridor {message.from_user.full_name}, \n\
         Telegram @{message.from_user.username} {message.from_user.get_mention()}\n\
         Telraqam: +998 ** *** ** **"
+        await db.emty_basket(message.from_user.id)
         await bot.send_message(chat_id=ADMINS[0], text=purchases)
