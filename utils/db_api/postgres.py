@@ -99,6 +99,8 @@ class Database:
                 key_type VARCHAR(100)
 
             )"""
+        await self.execute(sql, execute=True)
+
 #      for inserting values in to db
     async def add_product(self, category, item_name,item_image, description, item_price, key_type):
         sql= """
@@ -138,7 +140,8 @@ class Database:
         category VARCHAR(255) NULL,
         item_name VARCHAR(255) NULL,
         item_price bigint null,
-        quantity bigint null
+        quantity bigint null,
+        item_size varchar(20)
         );
         """
         await self.execute(sql, execute=True)
