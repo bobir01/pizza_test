@@ -26,6 +26,7 @@ async def cancel_procc(msg:Message, state:FSMContext):
     cur_state= data.get("category")
     await msg.answer("Yana nima xarid qilasiz ? ", reply_markup=await def_keyboard(cur_state)) # prevoius category
     await state.set_state("select_item")
+   
 
 
 

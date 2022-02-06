@@ -136,7 +136,7 @@ class Database:
         CREATE TABLE IF NOT EXISTS basket (
         id SERIAL PRIMARY KEY,
         full_name VARCHAR(255) NOT NULL,
-        telegram_id BIGINT NOT NULL UNIQUE,
+        telegram_id BIGINT NOT NULL ,
         category VARCHAR(255) NULL,
         item_name VARCHAR(255) NULL,
         item_price bigint null,

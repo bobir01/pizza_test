@@ -14,8 +14,7 @@ async def def_keyboard(category=None):
         for item in categories:
             for n in item:
                     
-                n= KeyboardButton(text=n)
-                categories_menu.add(n)
+                categories_menu.insert(KeyboardButton(text=n))
         categories_menu.insert(savat)
         return categories_menu.insert(back)
     else:
@@ -23,9 +22,7 @@ async def def_keyboard(category=None):
         items_list=await db.select_item(category) # select item belongs to this category
         for item in items_list:
             for x in item:
-                    
-                x= KeyboardButton(text=x)
-                items_menu.add(x)
+                items_menu.insert(KeyboardButton(text=x))
         items_menu.insert(savat)
         return items_menu.insert(back)
 
