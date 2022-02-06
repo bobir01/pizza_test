@@ -172,7 +172,7 @@ class Database:
         return await self.execute(sql ,telegram_id, fetch=True)
 
     async def emty_basket(self, telegram_id):
-        sql ="delete from basket where telegram_id = $1 order by id "
+        sql ="delete from basket where telegram_id = $1"
         return await self.execute(sql ,telegram_id, execute=True)
 
     async def update_basket_quantity(self,item_id, action):

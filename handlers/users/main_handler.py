@@ -112,7 +112,7 @@ async def order_handler(query:CallbackQuery, state: FSMContext):
     category =data.get("category")
     k_type = data.get("k_type")
     quantity=ex_key.quantity if k_type=="extended" else nar_key.quantity
-
+    size=None
     if k_type!="extended":
         size = None
     elif ex_key.size1=="✅":    
