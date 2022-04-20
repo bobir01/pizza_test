@@ -26,7 +26,7 @@ async def bot_start(message: Message):
 
 
   
-    await message.answer("Xus kelibsiz bizdagi menuga baho bering", reply_markup=menu_button)
+    await message.answer("Xush kelibsiz bizdagi menuga baho bering", reply_markup=menu_button)
 
 
 @dp.message_handler(text="📥 Savat", state="*")
