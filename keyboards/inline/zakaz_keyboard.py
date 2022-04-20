@@ -79,6 +79,13 @@ class obj:
         )
         return order_keyboard
 
+    def reset(self):
+        self.quantity=0
+        self.size1=""
+        self.size2=""
+        self.price=0
+
+
 
 
 
@@ -127,22 +134,29 @@ class narrow:
         return narrow
 
     def make_order_quantity_minus(self):
+        if self.quantity >0:
 
-        self.quantity-=1
-        narrow = InlineKeyboardMarkup(
-            inline_keyboard=[
-                [
-                    InlineKeyboardButton(text="➕", callback_data="+"),
-                    InlineKeyboardButton(text=f"{self.quantity}", callback_data="quantity"),
-                    InlineKeyboardButton(text="➖", callback_data="-")
-                ],
-                [
-                    InlineKeyboardButton(text="Savatga qo'shish", callback_data="order")
+            self.quantity-=1
+            narrow = InlineKeyboardMarkup(
+                inline_keyboard=[
+                    [
+                        InlineKeyboardButton(text="➕", callback_data="+"),
+                        InlineKeyboardButton(text=f"{self.quantity}", callback_data="quantity"),
+                        InlineKeyboardButton(text="➖", callback_data="-")
+                    ],
+                    [
+                        InlineKeyboardButton(text="Savatga qo'shish", callback_data="order")
+                    ]
+
                 ]
+            )
+            return narrow
+        else:
+            return None
+    def reset(self):
+        self.quantity = 0
 
-            ]
-        )
-        return narrow
 
+    
 
     

@@ -4,9 +4,11 @@ from aiogram.dispatcher import FSMContext
 from keyboards.default.def_keyboards import def_keyboard, back_button
 from loader import bot , dp , db
 from keyboards.inline.zakaz_keyboard import obj, narrow
-ex_key=obj()
-nar_key=narrow()
 
+  
+    ex_key=obj()
+    nar_key=narrow()
+    
 
 
 @dp.message_handler(text="Menu")
@@ -131,7 +133,9 @@ async def order_handler(query:CallbackQuery, state: FSMContext):
                             )
 
     await query.message.answer("Savatga muvaffaqiyatli qo'shildi ✅")
-    await query.message.answer("Yana nima tanlaysiz ?", reply_markup= await def_keyboard())
+    ex_key.reset() #   reseting class data 
+    nar_key.reset()  #.    reseting 
+    await query.message.edit_text("Yana nima tanlaysiz ?", reply_markup= await def_keyboard())
     await state.set_state("menu")
 
     
