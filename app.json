@@ -10,8 +10,12 @@
         "description": "Your db  password, as a string.",
         "value": ""
     },
-    "DB_IP": {
+    "DB_HOST": {
         "description": "Your db ip , as a string.",
+        "value": ""
+    },
+    "DB_USER": {
+        "description": "Your db  user , as a string.",
         "value": ""
     },
     "DB_NAME": {
