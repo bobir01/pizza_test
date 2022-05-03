@@ -1,5 +1,4 @@
 import asyncio
-import asyncpg
 import logging
 from aiogram.types import Message, CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton
 from aiogram.dispatcher.filters.builtin import CommandStart

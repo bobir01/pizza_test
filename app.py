@@ -16,15 +16,7 @@ async def on_startup(dispatcher):
     await db.create_products_table()
 
     await db.create_table_basket()
-    # produxcts created 
-    # data = await db.select_basket_item(1234567)
-    # for x in range(len(data)):
-    #     for i in range((len(data[x]))):
-    #         if i%3==0 and i!=0:
 
-    #             print(data[x][i])
-    #         # else:
-    #         #     continue
 
     await set_default_commands(dispatcher)
 
