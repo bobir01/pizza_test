@@ -27,7 +27,7 @@ async def valid_purchase(message:Message):
     if total==0:
         await message.answer("Sizning savatingiz bo'sh 😔")
     else:
-        await message.answer(f"Xaridingiz uchun raxmat \n[{purchases} \nOperatorlarimiz sizga aloqaga chiqishadi")
+        await message.answer(f"Xaridingiz uchun raxmat \n{purchases} \nOperatorlarimiz sizga aloqaga chiqishadi")
 
         purchases+=f"\nXaridor {message.from_user.full_name}, \n\
         Telegram @{message.from_user.username} {message.from_user.get_mention()}\n\

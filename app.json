@@ -1,0 +1,32 @@
+{
+    "name": "Transcript-Extractor-Bot",
+    "env": {
+     
+    "ADMIN_ID": {
+        "description": "Your bot token, as a string.",
+        "value": ""
+    },
+    "DB_PASS": {
+        "description": "Your db  password, as a string.",
+        "value": ""
+    },
+    "DB_IP": {
+        "description": "Your db ip , as a string.",
+        "value": ""
+    },
+    "DB_NAME": {
+        "description": "Your db name , as a string.",
+        "value": ""
+    },
+
+    "BOT_TOKEN": {
+        "description": "Your bot token, as a string.",
+        "value": ""
+  }
+    },
+    "buildpacks": [
+        {
+          "url": "heroku/python"
+        }
+      ]
+    }
