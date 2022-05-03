@@ -2,7 +2,7 @@
     "name": "Transcript-Extractor-Bot",
     "env": {
      
-    "ADMIN_ID": {
+    "ADMINS": {
         "description": "Your bot token, as a string.",
         "value": ""
     },
@@ -22,7 +22,10 @@
         "description": "Your db name , as a string.",
         "value": ""
     },
-
+    "IP": {
+        "description": "Your ip name , as a string.",
+        "value": ""
+    },
     "BOT_TOKEN": {
         "description": "Your bot token, as a string.",
         "value": ""
