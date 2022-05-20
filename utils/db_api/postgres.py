@@ -1,5 +1,6 @@
-
-
+import json
+from operator import truediv
+from textwrap import indent
 from typing import Union
 
 import asyncpg
@@ -186,3 +187,33 @@ class Database:
     async def delete_basket_item(self,item_id):
         sql = "delete from basket where id = $1"
         return await self.execute(sql, item_id, execute=True)
+
+
+    async def create_table_history(self):
+        sql = "CREATE TABLE IF NOT EXISTS purchase_history("\
+              "id SERIAL PRIMARY KEY,"\
+              "user_telegram_id BIGINT NOT NULL,"\
+              "purchased_time TIMESTAMP,"\
+              "json TEXT NOT NULL);"
+
+        await self.execute(sql, execute=True)
+
+    async def add_to_history(self, telegram_id, time_stamp, json_str):
+        sql = "insert into purchase_history(user_telegram_id, purchased_time, json) values($1,$2,$3) returning *"
+        await self.execute(sql, telegram_id, time_stamp, json_str, execute=True)
+
+    async def get_all_history(self, telegram_id):
+        sql = "select * from purchase_history where user_telegram_id "
+        return await self.execute(sql, telegram_id, fetch=True)
+
+    async def get_history_json(self, telegram_id):
+        sql = "select json from purchase_history where user_telegram_id = $1"
+        data = {}
+        json_items = await self.execute(sql, telegram_id, fetch=True)
+        # for index, item in  enumerate(json_items, start=1):
+        #     user_json = json.loads(item[0] if len(item)>=1 else item)
+        #     data[index] = user_json
+
+        return json_items
+
+    

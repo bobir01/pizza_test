@@ -1,12 +1,6 @@
-import asyncio
-import asyncpg
-import logging
-from aiogram.types import Message, CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton
-from aiogram.dispatcher.filters.builtin import CommandStart
-from aiogram.dispatcher import FSMContext
-from keyboards.inline.basket_keyboard import make_basket_buttons, basket_menu
-from keyboards.default.def_keyboards import menu_button, valid
-from keyboards.inline.zakaz_keyboard import obj, narrow
+import json
+from datetime import datetime
+from aiogram.types import Message
 from data.config import ADMINS
 from loader import db , dp, bot
 
@@ -17,13 +11,24 @@ async def valid_purchase(message:Message):
     purchases= ""
     total = 0
     count = 1
+    json_data = {}
     for item in basket:
         print(item)
         purchases+=f"{count}. {item['item_name']} {item['item_size'] if item['item_size'] else ''}\n \
-    {item['quantity']} x {item['item_price']} = { item['quantity'] * item['item_price'] }  \n"
+        {item['quantity']} x {item['item_price']} = { item['quantity'] * item['item_price'] }  \n"
         total+=item['quantity'] * item['item_price'] 
+        
+        json_data[int(count)] = {
+            'item_name': item['item_name'],
+            'item_size': item['item_size'] if item['item_size'] else None,
+            'quantity' : item['quantity'],
+            'item_price':item['item_price']
+           
+        }
+        json_data['total'] = total
         count+=1
     purchases+=f"\nUmumiy : {total}"
+    await db.add_to_history(message.from_user.id, datetime.now(), json.dumps(json_data)) # for adding to db history
     if total==0:
         await message.answer("Sizning savatingiz bo'sh 😔")
     else:

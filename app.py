@@ -17,7 +17,8 @@ async def on_startup(dispatcher):
 
     await db.create_table_basket()
 
-
+    await db.create_table_history()
+    
     await set_default_commands(dispatcher)
 
     # Bot ishga tushgani haqida adminga xabar berish
