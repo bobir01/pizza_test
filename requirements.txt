@@ -30,4 +30,4 @@ sqlparse==0.4.2
 telegraph==2.1.0
 typing_extensions==4.0.1
 urllib3==1.26.8
-yarl==1.7.2
+
