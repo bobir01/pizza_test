@@ -2,7 +2,7 @@ from aiogram import executor
 
 from loader import dp
 from loader import dp, db
-import middlewares, filters, handlers
+import middlewares, filters, handlers   # needs for collebration with other packages 
 from utils.notify_admins import on_startup_notify
 
 from utils.set_bot_commands import set_default_commands
@@ -17,8 +17,7 @@ async def on_startup(dispatcher):
 
     await db.create_table_basket()
 
-    await db.create_table_history()
-    
+
     await set_default_commands(dispatcher)
 
     # Bot ishga tushgani haqida adminga xabar berish
