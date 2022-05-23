@@ -3,7 +3,7 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from aiogram.utils.callback_data import CallbackData
 
 
-from loader import db 
+from loader import db , bot, dp 
 
 basket_menu = CallbackData("show_menu", "item_id", "plus", "minus")
 
