@@ -27,14 +27,14 @@ async def valid_purchase(message:Message):
         }
         json_data['total'] = total
         count+=1
-    purchases+=f"\nUmumiy : {total}"
+    purchases+=f"\Total : {total}"
     await db.add_to_history(message.from_user.id, datetime.now(), json.dumps(json_data)) # for adding to db history
     if total==0:
-        await message.answer("Sizning savatingiz bo'sh 😔")
+        await message.answer("Your basket is empty 😔")
     else:
-        await message.answer(f"Xaridingiz uchun raxmat \n{purchases} \nOperatorlarimiz sizga aloqaga chiqishadi")
+        await message.answer(f"Thanks for your purchase  \n{purchases} \n Our operaters will contuct you")
 
-        purchases+=f"\nXaridor {message.from_user.full_name}, \n\
+        purchases+=f"\Customer {message.from_user.full_name}, \n\
         Telegram @{message.from_user.username} {message.from_user.get_mention()}\n\
         Telraqam: +998 ** *** ** **"
         await db.emty_basket(message.from_user.id)

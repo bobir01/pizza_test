@@ -220,3 +220,4 @@ class Database:
         return await self.execute("select * from purchase_history order by id", fetch=True)
 
     
+

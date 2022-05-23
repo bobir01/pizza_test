@@ -8,6 +8,11 @@ from aiogram.utils.exceptions import (Unauthorized, InvalidQueryID, TelegramAPIE
 from loader import dp
 
 
+
+
+
+
+
 @dp.errors_handler()
 async def errors_handler(update, exception):
     """
@@ -56,3 +61,6 @@ async def errors_handler(update, exception):
         return True
     
     logging.exception(f'Update: {update} \n{exception}')
+
+
+
