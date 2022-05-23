@@ -25,14 +25,14 @@ async def bot_start(message: Message):
 
 
   
-    await message.answer("Xush kelibsiz bizdagi menuga baho bering", reply_markup=menu_button)
+    await message.answer("Welcome to our fast food delivery service !", reply_markup=menu_button)
 
 
-@dp.message_handler(text="📥 Savat", state="*")
+@dp.message_handler(text="Basket", state="*")
 async def intro_basket(message: Message, state: FSMContext):
     await state.finish()
 
-    await message.answer("Tasdiqlash uchun Tadiqlash tugmasidan foydalaning", reply_markup=valid)
+    await message.answer("For confirming plaease press confirm ", reply_markup=valid)
     markup=make_basket_buttons()
         
     basket_data = await db.select_basket_item(message.from_user.id)

@@ -5,7 +5,7 @@ from data.config import ADMINS
 from loader import db , dp, bot
 
 
-@dp.message_handler(text="Tasdiqlash", state="*")
+@dp.message_handler(text="Confirm", state="*")
 async def valid_purchase(message:Message):
     basket = await db.select_basket_item(message.from_user.id)
     purchases= ""

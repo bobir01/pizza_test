@@ -38,7 +38,7 @@ async def select_category(message: Message, state:FSMContext):
 
     details= await db.select_item_details(item)  # to get detailed information from db matchs to chesen item 
     await message.answer_photo(photo=details[0],  # item's photo
-    caption=f"{details[1]}\n\nNarxi: {details[2]}",        # description about item 'caption' detail[2] is price
+    caption=f"{details[1]}\n\n Narxi: {details[2]}",        # description about item 'caption' detail[2] is price
     reply_markup=ex_key.make_keyboard() if details[3]=="extended" else nar_key.make_keyboard())
     ex_key.price=details[2]    # defining price to class member so that it to be static
     await state.set_state("order")
@@ -64,7 +64,7 @@ async def plus_handler(query:CallbackQuery, state: FSMContext):
     await bot.edit_message_caption(
         chat_id=query.from_user.id,
         message_id=query.message.message_id,
-        caption=f" {caption}\Price: { (ex_key.quantity+1) * price if k_type=='extended' else  (nar_key.quantity+1) * price } sum ",
+        caption=f" {caption}\nPrice: { (ex_key.quantity+1) * price if k_type=='extended' else  (nar_key.quantity+1) * price } sum ",
         reply_markup=ex_key.make_order_quantity_plus() if k_type=="extended" else nar_key.make_order_quantity_plus()  # changing reply_markup for showing price
         )
     
@@ -83,7 +83,7 @@ async def plus_handler(query:CallbackQuery, state:FSMContext):
         await bot.edit_message_caption(
         chat_id=query.from_user.id,
         message_id=query.message.message_id,
-        caption=f" {caption}\Price: { (ex_key.quantity-1) * price if k_type=='extended' else  (nar_key.quantity-1) * price } sum ",
+        caption=f" {caption}\nPrice: { (ex_key.quantity-1) * price if k_type=='extended' else  (nar_key.quantity-1) * price } sum ",
         reply_markup=ex_key.make_order_quantity_minus() if k_type=="extended" else nar_key.make_order_quantity_minus()
         )
 

@@ -14,8 +14,8 @@ class obj:
         order_keyboard = InlineKeyboardMarkup(
             inline_keyboard=[
                 [
-                    InlineKeyboardButton(text=f"katta{self.size1}", callback_data="order_big"),
-                    InlineKeyboardButton(text=f"kichkina{self.size2}", callback_data="order_small")
+                    InlineKeyboardButton(text=f"big{self.size1}", callback_data="order_big"),
+                    InlineKeyboardButton(text=f"smaall{self.size2}", callback_data="order_small")
                 ],
                 [
                     InlineKeyboardButton(text="➕", callback_data="+"),
@@ -23,7 +23,7 @@ class obj:
                     InlineKeyboardButton(text="➖", callback_data="-")
                 ],
                 [
-                    InlineKeyboardButton(text="Savatga qo'shish", callback_data="order")
+                    InlineKeyboardButton(text="Add to basket", callback_data="order")
                 ]
 
             ]
@@ -41,8 +41,8 @@ class obj:
         order_keyboard = InlineKeyboardMarkup(
             inline_keyboard=[
                 [
-                    InlineKeyboardButton(text=f"katta{self.size1}", callback_data="order_big"),
-                    InlineKeyboardButton(text=f"kichkina{self.size2}", callback_data="order_small")
+                    InlineKeyboardButton(text=f"big{self.size1}", callback_data="order_big"),
+                    InlineKeyboardButton(text=f"small{self.size2}", callback_data="order_small")
                 ],
                 [
                     InlineKeyboardButton(text="➕", callback_data="+"),
@@ -50,7 +50,7 @@ class obj:
                     InlineKeyboardButton(text="➖", callback_data="-")
                 ],
                 [
-                    InlineKeyboardButton(text="Savatga qo'shish", callback_data="order")
+                    InlineKeyboardButton(text="Add to basket", callback_data="order")
                 ]
 
             ]
@@ -63,8 +63,8 @@ class obj:
         order_keyboard = InlineKeyboardMarkup(
             inline_keyboard=[
                 [
-                    InlineKeyboardButton(text=f"katta{self.size1}", callback_data="order_big"),
-                    InlineKeyboardButton(text=f"kichkina{self.size2}", callback_data="order_small")
+                    InlineKeyboardButton(text=f"big{self.size1}", callback_data="order_big"),
+                    InlineKeyboardButton(text=f"small{self.size2}", callback_data="order_small")
                 ],
                 [
                     InlineKeyboardButton(text="➕", callback_data="+"),
@@ -72,7 +72,7 @@ class obj:
                     InlineKeyboardButton(text="➖", callback_data="-")
                 ],
                 [
-                    InlineKeyboardButton(text="Savatga qo'shish", callback_data="order")
+                    InlineKeyboardButton(text="Add to basket", callback_data="order")
                 ]
 
             ]
@@ -108,7 +108,7 @@ class narrow:
                     InlineKeyboardButton(text="➖", callback_data="-")
                 ],
                 [
-                    InlineKeyboardButton(text="Savatga qo'shish", callback_data="order")
+                    InlineKeyboardButton(text="Add to basket", callback_data="order")
                 ]
 
             ]
@@ -126,7 +126,7 @@ class narrow:
                     InlineKeyboardButton(text="➖", callback_data="-")
                 ],
                 [
-                    InlineKeyboardButton(text="Savatga qo'shish", callback_data="order")
+                    InlineKeyboardButton(text="Add to basket", callback_data="order")
                 ]
 
             ]
@@ -145,7 +145,7 @@ class narrow:
                         InlineKeyboardButton(text="➖", callback_data="-")
                     ],
                     [
-                        InlineKeyboardButton(text="Savatga qo'shish", callback_data="order")
+                        InlineKeyboardButton(text="Add to basket", callback_data="order")
                     ]
 
                 ]

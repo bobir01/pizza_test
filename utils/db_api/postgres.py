@@ -206,14 +206,17 @@ class Database:
         sql = "select * from purchase_history where user_telegram_id "
         return await self.execute(sql, telegram_id, fetch=True)
 
-    async def get_history_json(self, telegram_id):
-        sql = "select json from purchase_history where user_telegram_id = $1"
-        data = {}
-        json_items = await self.execute(sql, telegram_id, fetch=True)
-        # for index, item in  enumerate(json_items, start=1):
-        #     user_json = json.loads(item[0] if len(item)>=1 else item)
-        #     data[index] = user_json
+    async def get_history_json(self, telegram_id=None):
+        if telegram_id:
+                
+            sql = "select json from purchase_history where user_telegram_id = $1"
+            data = {}
+            json_items = await self.execute(sql, telegram_id, fetch=True)
+            # for index, item in  enumerate(json_items, start=1):
+            #     user_json = json.loads(item[0] if len(item)>=1 else item)
+            #     data[index] = user_json
 
-        return json_items
+            return json_items
+        return await self.execute("select * from purchase_history order by id", fetch=True)
 
     

@@ -4,8 +4,8 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 
 async def def_keyboard(category=None):
-    back = KeyboardButton("Ortga")
-    savat = KeyboardButton("📥 Savat")
+    back = KeyboardButton("Back")
+    savat = KeyboardButton("Basket")
     if not category:
         
         categories_menu = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
@@ -29,7 +29,7 @@ async def def_keyboard(category=None):
 
 
 back_button = ReplyKeyboardMarkup(resize_keyboard=True,keyboard=[
-    [KeyboardButton(text="Ortga")]
+    [KeyboardButton(text="Back")]
 ])
 
 
@@ -38,6 +38,6 @@ menu_button = ReplyKeyboardMarkup(resize_keyboard=True,keyboard=[
 ])
 
 valid = ReplyKeyboardMarkup(resize_keyboard=True,keyboard=[
-    [KeyboardButton(text="Ortga")],
-    [KeyboardButton("Tasdiqlash")]
+    [KeyboardButton(text="Back")],
+    [KeyboardButton("Confirm")]
 ])
