@@ -16,3 +16,4 @@ async def get_my_history(message: Message):
         data[count] = json.loads(item['json'])
     
     await message.answer(json.dumps(data, indent=4))
+    
